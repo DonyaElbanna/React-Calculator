@@ -10,29 +10,39 @@
 
 #calculator {
   margin-top: 50%;
-  border: 3px solid rgb(42, 41, 80);
-  border-radius: 14px;
+  border: 8px solid #14141b;
+  border-radius: 10px;
 }
 
 #screen {
+  border-radius: 0 0 20px 20px;
+  background-color: blueviolet;
+}
+
+.result {
   background-color: rgb(206, 201, 201);
   height: 60px;
-  border-radius: 10px 10px 0 0;
-  border: 3px solid gray;
+  /* border-radius: 0 0 50px 50px; */
+  /* border: 3px solid gray; */
   padding: 10px 10px 0 10px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 
+.formula {
+  background-color: rgb(206, 201, 201);
+  padding: 10px 10px 0 10px;
+}
+
 #buttonsPad {
   background-color: rgb(75, 67, 67);
-  padding: 10px;
+  padding: 25px 10px 10px 10px;
   height: calc(100% - 110px);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 8px;
-  border-radius: 0 0 10px 10px;
+  border-top: 2px solid black;
 }
 
 button {
@@ -42,12 +52,14 @@ button {
   border-radius: 50%;
 }
 
-button:first-child {
+button:first-child,
+button:nth-child(2) {
   background-color: rgb(219, 114, 102);
   color: whitesmoke;
 }
 
-button:first-child:hover {
+button:first-child:hover,
+button:nth-child(2):hover {
   background-color: rgb(243, 57, 57);
 }
 
@@ -59,4 +71,16 @@ button:nth-child(3) {
 button:hover {
   cursor: pointer;
   background-color: rgba(187, 189, 192, 0.788);
+}
+
+.equal {
+  grid-column: 3 / 5;
+  width: 100px;
+  border-radius: 10px;
+  background-color: rgb(74, 197, 74);
+  color: white;
+}
+
+.equal:hover {
+  background-color: rgb(44, 165, 44);
 }

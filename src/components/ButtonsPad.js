@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
 
-function ButtonsPad() {
+function ButtonsPad({ numClicked }) {
   const nums = [
     "C",
-    "()",
+    "CE",
     "%",
     "÷",
     7,
@@ -19,7 +19,6 @@ function ButtonsPad() {
     2,
     3,
     "+",
-    "+/-",
     0,
     ".",
     "=",
@@ -27,8 +26,8 @@ function ButtonsPad() {
 
   return (
     <div id="buttonsPad">
-      {nums.map((num) => (
-        <button key={num} id={num}>
+      {nums.map((num, i) => (
+        <button key={i} value={num} onClick={numClicked} className={num === "=" ? 'equal' : ''}>
           {num}
         </button>
       ))}
