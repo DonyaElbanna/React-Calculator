@@ -1,38 +1,62 @@
+* {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .App {
-  text-align: center;
+  width: fit-content;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#calculator {
+  margin-top: 50%;
+  border: 3px solid rgb(42, 41, 80);
+  border-radius: 14px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#screen {
+  background-color: rgb(206, 201, 201);
+  height: 60px;
+  border-radius: 10px 10px 0 0;
+  border: 3px solid gray;
+  padding: 10px 10px 0 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+#buttonsPad {
+  background-color: rgb(75, 67, 67);
+  padding: 10px;
+  height: calc(100% - 110px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+  border-radius: 0 0 10px 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  margin: auto;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+button:first-child {
+  background-color: rgb(219, 114, 102);
+  color: whitesmoke;
+}
+
+button:first-child:hover {
+  background-color: rgb(243, 57, 57);
+}
+
+button:nth-child(4n),
+button:nth-child(3) {
+  color: rgb(21, 150, 21);
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(187, 189, 192, 0.788);
 }
