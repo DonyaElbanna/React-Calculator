@@ -1,33 +1,39 @@
 import React from "react";
 import "../App.css";
 
-function ButtonsPad({ numClicked }) {
+function ButtonsPad({ btnClicked }) {
   const nums = [
     "C",
     "CE",
-    "%",
-    "÷",
+    "/",
     7,
     8,
     9,
-    "×",
+    "*",
     4,
     5,
     6,
-    "–",
+    "-",
     1,
     2,
     3,
     "+",
-    0,
     ".",
+    0,
     "=",
   ];
 
   return (
     <div id="buttonsPad">
       {nums.map((num, i) => (
-        <button key={i} value={num} onClick={numClicked} className={num === "=" ? 'equal' : ''}>
+        <button
+          key={i}
+          value={num}
+          onClick={() => {
+            btnClicked(num.toString());
+          }}
+          className={num === "=" ? "equal" : num === "C" ? "clear" : " "}
+        >
           {num}
         </button>
       ))}

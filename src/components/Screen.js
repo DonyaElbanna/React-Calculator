@@ -1,8 +1,8 @@
-function Screen({ value }) {
+function Screen({ equation, result }) {
   return (
     <div id="screen">
-      <div className="formula">formula</div>
-      <div className="result">{value}</div>
+      <div className="formula">{equation || 0}</div>
+      <div className="result">{result || 0}</div>
     </div>
   );
 }
