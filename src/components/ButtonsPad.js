@@ -5,6 +5,7 @@ function ButtonsPad({ btnClicked }) {
   const nums = [
     "C",
     "CE",
+    "±",
     "/",
     7,
     8,
@@ -32,7 +33,15 @@ function ButtonsPad({ btnClicked }) {
           onClick={() => {
             btnClicked(num.toString());
           }}
-          className={num === "=" ? "equal" : num === "C" ? "clear" : " "}
+          className={
+            num === "="
+              ? "equal"
+              : num === "/"
+              ? "divide"
+              : num === "*"
+              ? "multiply"
+              : " "
+          }
         >
           {num}
         </button>

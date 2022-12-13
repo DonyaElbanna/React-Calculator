@@ -7,7 +7,7 @@ function App() {
   const [equation, setEquation] = useState("");
   const [result, setResult] = useState("");
 
-  const ops = ["/", "*", "-", "+", "."];
+  const ops = ["/", "*", "+", "."];
 
   const btnClicked = (num) => {
     if (num === "C") {
@@ -22,11 +22,19 @@ function App() {
       ];
     } else if (equation.length >= 16) {
       setResult("Digit limit met");
+    } else if (num === "0" && equation === "") {
+      setResult("0");
+    } else if (num === "." && equation === "") {
+      setEquation("0.");
     } else if (
       (ops.includes(num) && equation === "") ||
       (ops.includes(num) && ops.includes(equation.slice(-1)))
     ) {
       return;
+    } else if (equation.includes("--")) {
+      setEquation(equation.replace("--", "+") + num);
+    } else if (num === "±") {
+      return invertSign();
     } else {
       setEquation(equation + num);
     }
@@ -40,6 +48,11 @@ function App() {
 
   const clearEntry = () => {
     setEquation(equation.slice(0, -1));
+  };
+
+  const invertSign = () => {
+    setEquation("-" + equation.toString());
+    // console.log('invert')
   };
 
   return (
